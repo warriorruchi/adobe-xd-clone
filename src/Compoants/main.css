@@ -1,0 +1,16 @@
+.card {
+    border: "1px solid #e0e0e0";
+    margin: "2px";
+    padding: "5px";
+    height: "250px";
+    width: "200px";
+    backgroundColor: "#191970";
+    boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)";
+
+    borderRadius: 8px;
+    transition: "transform 0.2s";
+    color: "white";
+
+    cursor: "pointer";
+    textAlign: "left"
+}
