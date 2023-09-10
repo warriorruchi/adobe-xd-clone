@@ -9,11 +9,18 @@
         color: white;
         cursor: pointer;
         text-align: left;
-        /* overflow: hidden; */
+        overflow: hidden;
         width: 175px;
-        height: 175px;
+        /* height: 175px; */
 
 }
+
+@media (min-width: 580px) {
+    .card {
+      height: 175px;
+    }
+  }
+  
 .head{
     display: flex;
     align-items: center;

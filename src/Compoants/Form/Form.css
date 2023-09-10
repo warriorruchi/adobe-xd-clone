@@ -1,12 +1,22 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@500&display=swap');
+
 .container {
-    display: flex;
-    width: 100%;
+    /* display: flex; */
+    /* width: 100%; */
     /* margin: auto; */
     margin-top: 100px;
     align-items: center;
      justify-content: space-between;
     box-shadow: rgba(100, 100, 111, 0.2) 10px 7px 29px 10px;
     padding: 25px;
+    
+}
+
+@media screen and (min-width:1024px) {
+    .container {
+        display: flex;
+    }
 }
 
 .part1
@@ -28,7 +38,7 @@
 }
 
 .cartcontainer {
-    width: 50%;
+    /* width: 50%; */
     margin-right: 10px;
 }
 
@@ -45,7 +55,7 @@
 }
 
 .formcontainer {
-    display: flex;
+     display: flex;
     column-gap: 5px;
     text-align: left;
 }
@@ -63,4 +73,6 @@
     /* width: 300px; */
     text-align: left;
     margin-right: 10px;
+    font-family: 'Assistant', sans-serif;
+    font-size: larger;
 }
