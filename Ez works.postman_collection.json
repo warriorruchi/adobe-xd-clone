@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "c2ef65e7-1e8c-4313-b4e4-455c0bad09e0",
+		"name": "Ez works",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27050516"
+	},
+	"item": [
+		{
+			"name": "post abc.com",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"ruchi@abc.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://3.228.97.110:9000/api",
+					"protocol": "http",
+					"host": [
+						"3",
+						"228",
+						"97",
+						"110"
+					],
+					"port": "9000",
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post ez.works",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"ruchi@ez.works\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://3.228.97.110:9000/api",
+					"protocol": "http",
+					"host": [
+						"3",
+						"228",
+						"97",
+						"110"
+					],
+					"port": "9000",
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post gmail.com",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"ruchi@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://3.228.97.110:9000/api",
+					"protocol": "http",
+					"host": [
+						"3",
+						"228",
+						"97",
+						"110"
+					],
+					"port": "9000",
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

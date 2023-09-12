@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Card from "../Card/Card"
-import axios from "axios";
+// import axios from "axios";
 import './Form.css';
 
 
@@ -12,14 +12,16 @@ function Form() {
     const [submitted, setSubmitted] = useState(false);
     const [apiError, setApiError] = useState(null);
     const [successMessage, setSuccessMessage] = useState("");
-    
+
 
     const handleEmailChange = (e) => {
         const value = e.target.value;
         setEmail(value);
 
-        const email = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        setIsValidEmail(email.test(value));
+        const emailreg = /^(?!.*@ez\.works$)([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/;
+
+        setIsValidEmail(emailreg.test(value));
+        console.log(emailreg.test(value))
     };
 
     const handleSubmit = (e) => {
@@ -28,24 +30,32 @@ function Form() {
 
         setSuccessMessage('');
 
+
         if (isValidEmail) {
-
-            axios
-                .post("http://3.228.97.110:9000/api", { email })
-                .then((response) => {
-
-                    console.log("API response:", response.data);
+            fetch("http://3.228.97.110:9000/api", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(email)  
+            })
+                .then((response) => response.json())
+                .then((res) => {
+                    
+                    console.log("API response:", res.data);
                     // Display success message
                     setApiError(null);
-
-                    setSuccessMessage("Form submitted successfully.");
+                    setSuccessMessage("Form Submitted");
                 })
                 .catch((error) => {
-
                     console.error("API error:", error);
                     // Display the API error message
-                    setApiError("Please Enter the vaild email id..");
+                    setApiError("An error occurred while submitting the form.");
                 });
+        } else {
+            setSubmitted(false)
+            setApiError("Please Enter the vaild email id..")
+            setSuccessMessage("")
         }
     };
     const imageUrl = 'image/Image1.png'
@@ -74,9 +84,9 @@ function Form() {
                                     </div>
                                     <div>
                                         {submitted && !isValidEmail && (
-                                            <p style={{ color: "red", fontSize: "15px" }}>{}</p>
+                                            <p style={{ color: "red", fontSize: "15px" }}>{ }</p>
                                         )}
-                                        
+
                                         {apiError && <p style={{ color: "red", fontSize: "15px" }}>{apiError}</p>}
                                         {successMessage && (
                                             <p style={{ color: "green", margin: "5px 0", fontSize: "15px" }}>{successMessage}</p>
