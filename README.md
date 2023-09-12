@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# My Responsive ReactJS Project with API Integration
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This ReactJS project is designed to be responsive on various devices and integrates with an external API for form submissions. It includes client-side validation for email input fields.
+![Screenshot 2023-09-12 153645](https://github.com/warriorruchi/adobe-xd-clone/assets/120272171/1cc7b609-4641-4e97-8caf-ec20dd08fe30)
 
-## Available Scripts
+## Responsive Design
 
-In the project directory, you can run:
+This project has been tested and optimized for responsiveness on the following devices and resolutions:
 
-### `npm start`
+- Mobile View (480p)
+- 720p
+- 1080p
+- iPad (2732x2048)
+- MacBook (1440x823)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## API Integration
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The project uses the following API for form submissions:
 
-### `npm test`
+- API Link: [API Link](http://3.228.97.110:9000/api)
+- Request Method: POST
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Form Validation
 
-### `npm run build`
+1. **Empty Form Submission**: Empty form submission is not allowed. It is validated at the front-end to ensure that all required fields are filled before making the API request.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. **Email Validation**: Email validation is performed at the front-end to check the email format. Invalid email addresses will trigger a validation error.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. **API Response Handling**: When the email ends with "@ez.works," an error will be returned in the API response. This error message will be displayed inside the corresponding form field.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. **Successful Form Submission**: Upon successful form submission, the API will return a 200 response status, and the text "Form Submitted" will be displayed in the text field.
 
-### `npm run eject`
+## **Tech stacks used :**
+To create this clone following Tech stack is used by contributors.  
+<br>
+<img src="https://img.shields.io/badge/reactjs-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
+<img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"/>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Installation and Setup Instructions
+Clone down this repository using this <a href="https://github.com/warriorruchi/adobe-xd-clone">link</a> 
+<hr/>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Getting Started
+To run this project locally, follow these steps:
+1.**Install project dependencies**:npm install
+2.**Start the development server**:npm start
