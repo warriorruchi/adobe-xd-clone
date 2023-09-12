@@ -12,18 +12,21 @@ function Form() {
     const [submitted, setSubmitted] = useState(false);
     const [apiError, setApiError] = useState(null);
     const [successMessage, setSuccessMessage] = useState("");
+    
 
     const handleEmailChange = (e) => {
         const value = e.target.value;
         setEmail(value);
 
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        setIsValidEmail(emailRegex.test(value));
+        const email = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        setIsValidEmail(email.test(value));
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setSubmitted(true);
+
+        setSuccessMessage('');
 
         if (isValidEmail) {
 
@@ -71,8 +74,9 @@ function Form() {
                                     </div>
                                     <div>
                                         {submitted && !isValidEmail && (
-                                            <p style={{ color: "red", fontSize: "15px" }}>Please enter a valid email address.</p>
+                                            <p style={{ color: "red", fontSize: "15px" }}>{}</p>
                                         )}
+                                        
                                         {apiError && <p style={{ color: "red", fontSize: "15px" }}>{apiError}</p>}
                                         {successMessage && (
                                             <p style={{ color: "green", margin: "5px 0", fontSize: "15px" }}>{successMessage}</p>

@@ -1,8 +1,0 @@
-.maindiv{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    column-gap: 50px;
-    /* box-shadow: rgba(100, 100, 111, 0.2) 10px 10px 10px 10px; */
-    /* margin: auto; */
-}
