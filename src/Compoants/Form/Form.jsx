@@ -1,63 +1,59 @@
 import React, { useState } from "react";
 import Card from "../Card/Card"
-// import axios from "axios";
 import './Form.css';
 
-
-
 function Form() {
-
     const [email, setEmail] = useState("");
     const [isValidEmail, setIsValidEmail] = useState(true);
-    const [submitted, setSubmitted] = useState(false);
     const [apiError, setApiError] = useState(null);
     const [successMessage, setSuccessMessage] = useState("");
-
 
     const handleEmailChange = (e) => {
         const value = e.target.value;
         setEmail(value);
-
         const emailreg = /^(?!.*@ez\.works$)([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/;
-
         setIsValidEmail(emailreg.test(value));
-        console.log(emailreg.test(value))
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setSubmitted(true);
-
         setSuccessMessage('');
 
-
-        if (isValidEmail) {
-            fetch("http://3.228.97.110:9000/api", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(email)  
-            })
-                .then((response) => response.json())
-                .then((res) => {
-                    
-                    console.log("API response:", res.data);
-                    // Display success message
-                    setApiError(null);
-                    setSuccessMessage("Form Submitted");
-                })
-                .catch((error) => {
-                    console.error("API error:", error);
-                    // Display the API error message
-                    setApiError("An error occurred while submitting the form.");
-                });
-        } else {
-            setSubmitted(false)
+        // Frontend Validation
+        if(isValidEmail){
+            setApiError(null);
+        }else{
             setApiError("Please Enter the vaild email id..")
             setSuccessMessage("")
         }
+
+        fetch("http://3.228.97.110:9000/api", {
+            method: "POST",
+            headers: {
+                 "Content-Type": "application/json"
+            },
+            body: JSON.stringify({email:email})  
+        })
+        .then((response) => response.json())
+        .then((res) => {
+
+            // Backend Validation
+            if(res.success){
+                setSuccessMessage("Form Submitted");
+                setApiError(null)
+            }else{
+                setSuccessMessage("")
+                setApiError("Please Enter the vaild email id..")
+            }
+        })
+        .catch((error) => {
+
+            //Error handling
+            setSuccessMessage("")
+            setApiError("An error occurred while submitting the form.");
+        });
     };
+
     const imageUrl = 'image/Image1.png'
     const Url = 'image/Image2.png';
     const imageUrl1 = 'image/Image3.png';
@@ -83,7 +79,7 @@ function Form() {
                                         <label><input type="Email" placeholder="Email Address" value={email} onChange={handleEmailChange} className="input" /></label>
                                     </div>
                                     <div>
-                                        {submitted && !isValidEmail && (
+                                        {!isValidEmail && (
                                             <p style={{ color: "red", fontSize: "15px" }}>{ }</p>
                                         )}
 
