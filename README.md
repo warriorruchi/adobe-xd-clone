@@ -3,6 +3,7 @@
 This ReactJS project is designed to be responsive on various devices and integrates with an external API for form submissions. It includes client-side validation for email input fields.
 ![Screenshot 2023-09-12 153645](https://github.com/warriorruchi/adobe-xd-clone/assets/120272171/1cc7b609-4641-4e97-8caf-ec20dd08fe30)
 
+
 ## Responsive Design
 
 This project has been tested and optimized for responsiveness on the following devices and resolutions:
